@@ -144,7 +144,7 @@ public class DriverMaker {
         return key.equals(actual);
     }
 
-    public void sleep() {
+    public static void sleep() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

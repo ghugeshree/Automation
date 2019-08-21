@@ -305,7 +305,8 @@ public class SDPrimaryConsent extends DriverMaker{
         driver.findElementByAccessibilityId("state").click();
         DriverMaker.selectFromDropDown();
         driver.findElementByAccessibilityId("zip code").sendKeys("12345");
-        driver.findElementByAccessibilityId("zip code").sendKeys(Keys.RETURN);
+
+        scrollToPress();
         driver.findElementByAccessibilityId("phone number").sendKeys("9999999999");
 
 

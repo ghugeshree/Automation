@@ -70,6 +70,7 @@ public class PrimaryConsentActivity {
 
         //click on play button
         DriverMaker.explicitWait(getButtonPlay());
+        DriverMaker.sleep();
         getButtonPlay().click();
 
         //loop for skipping the video by 15 seconds
