@@ -280,6 +280,7 @@ public class SDPrimaryConsent extends DriverMaker{
         //page 36 - Name, date, scroll
         driver.findElementByAccessibilityId("type your full name").sendKeys("John Doe");
         scrollToPress();
+
         sleep();
         primaryConsentObject.getNext().click();
         System.out.println("Page 36 completed.");
