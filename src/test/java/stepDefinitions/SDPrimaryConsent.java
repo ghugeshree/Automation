@@ -280,6 +280,7 @@ public class SDPrimaryConsent extends DriverMaker{
         //page 36 - Name, date, scroll
         driver.findElementByAccessibilityId("type your full name").sendKeys("John Doe");
         scrollToPress();
+        sleep();
         primaryConsentObject.getNext().click();
         System.out.println("Page 36 completed.");
 
@@ -305,8 +306,9 @@ public class SDPrimaryConsent extends DriverMaker{
         driver.findElementByAccessibilityId("zip code").sendKeys("12345");
         driver.findElementByAccessibilityId("zip code").sendKeys(Keys.RETURN);
         driver.findElementByAccessibilityId("phone number").sendKeys("9999999999");
-        driver.findElementByAccessibilityId("MM/DD/YYYY").click();
 
+
+        driver.findElementByAccessibilityId("MM/DD/YYYY").click();
         //go back 20 years
         scrollDate();
         primaryConsentObject.getNext().click();
