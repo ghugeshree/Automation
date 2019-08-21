@@ -4,15 +4,10 @@ import activityObjects.*;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,6 +21,8 @@ public class DriverMaker {
     PrimaryConsentActivity primaryConsentObject = null;
     DashboardActivity dashboardActivityObject = null;
 
+    public static TouchAction tc = null;
+
     static String email = null;
     static String password = null;
 
@@ -36,6 +33,9 @@ public class DriverMaker {
         signUpActivity2 = new SignUpActivity2(driver);
         primaryConsentObject = new PrimaryConsentActivity(driver);
         dashboardActivityObject = new DashboardActivity(driver);
+
+        //touchAction object
+        tc = new TouchAction(driver);
     }
 
 
@@ -70,6 +70,4 @@ public class DriverMaker {
         driver = new IOSDriver(url, caps);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-
-
 }

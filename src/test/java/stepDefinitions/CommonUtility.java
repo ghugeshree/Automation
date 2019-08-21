@@ -21,9 +21,7 @@ public class CommonUtility extends DriverMaker{
         WebDriverWait wait = new WebDriverWait(driver, 2);
 
         while(true) {
-            //System.out.println("Try " + (i++));
             if(element.isDisplayed()) {
-                //System.out.println("Found element => " + element);
                 break;
             } else {
                 wait.until(ExpectedConditions.visibilityOf(element));
@@ -46,7 +44,6 @@ public class CommonUtility extends DriverMaker{
 
     public static void scrollDate() {
 
-        TouchAction tc = new TouchAction(driver);
 
         for(byte i = 0; i <= 20; i++) {
             tc.tap(PointOption.point(280, 665))

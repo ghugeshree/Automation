@@ -1,13 +1,8 @@
 package stepDefinitions;
 
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.MobileElement;
-import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
 public class SDPrimaryConsent extends CommonUtility{
     String email = null;
@@ -51,7 +46,7 @@ public class SDPrimaryConsent extends CommonUtility{
         //page 5 - where you live? select state and press next
         pageTitle = "Where You Live";
         if(isOnCorrectActivity(pageTitle)) {
-            primaryConsentObject.getButtonState().click();
+            primaryConsentObject.getInputFieldState().click();
             selectFromDropDown();
             primaryConsentObject.getNext().click();
             System.out.println("Page 5 completed.");
@@ -69,7 +64,7 @@ public class SDPrimaryConsent extends CommonUtility{
         //page 7 - where you get healthcare, select healthcare place and press next
         pageTitle = "Where You Get Healthcare";
         if(isOnCorrectActivity(pageTitle)) {
-            primaryConsentObject.getButtonState().click();
+            primaryConsentObject.getInputFieldState().click();
             selectFromDropDown();
             primaryConsentObject.getNext().click();
             System.out.println("Page 7 completed.");
