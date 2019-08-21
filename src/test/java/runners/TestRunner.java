@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
         features = {"src/test/java/featureFiles"},
         glue= {"stepDefinitions"},
-        tags = {"@SignUp, @PrimaryConsent"},
+        tags = {"@PrimaryConsent"},
         monochrome = true,
         format = {"pretty", "html:target/Reports"}
 )

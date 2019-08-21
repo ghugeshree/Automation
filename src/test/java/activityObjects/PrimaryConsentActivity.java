@@ -56,7 +56,7 @@ public class PrimaryConsentActivity {
 
     public MobileElement getInputFieldFirstName() { return driver.findElementByAccessibilityId("first name"); }
 
-    public MobileElement getInputFieldMiddleName() { return driver.findElementByAccessibilityId("middle name"); }
+    public MobileElement getInputFieldMiddleName() { return driver.findElementByAccessibilityId("middle initial"); }
 
     public MobileElement getInputFieldLastName() { return driver.findElementByAccessibilityId("last name"); }
 
