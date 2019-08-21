@@ -57,6 +57,10 @@ public class PrimaryConsentActivity {
         return driver.findElementByAccessibilityId("Submit");
     }
 
+    public MobileElement getButtonYes() {
+        return driver.findElementByAccessibilityId("notification.page.communication.action.cancel"); //or .ok
+    }
+
     public String getLabelWelcomeExpected() {
         return "Welcome";
     }

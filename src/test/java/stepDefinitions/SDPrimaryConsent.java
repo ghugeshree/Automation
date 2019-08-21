@@ -281,6 +281,8 @@ public class SDPrimaryConsent extends DriverMaker{
         driver.findElementByAccessibilityId("type your full name").sendKeys("John Doe");
         scrollToPress();
 
+        driver.findElementByAccessibilityId("[now | dateFormat: 'MM/dd/yyyy']").click();
+
         sleep();
         primaryConsentObject.getNext().click();
         System.out.println("Page 36 completed.");
@@ -321,6 +323,10 @@ public class SDPrimaryConsent extends DriverMaker{
         primaryConsentObject.getButtonSubmit().click();
         System.out.println("Page 39 completed.");
 
+        //page 40 - Get Updates
+        sleep();
+        primaryConsentObject.getButtonYes().click();
+        System.out.println("Page 40 completed.");
     }
 
     @Then("^I am able to see my dashboard$")

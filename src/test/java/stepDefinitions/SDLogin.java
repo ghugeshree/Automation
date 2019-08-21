@@ -17,7 +17,7 @@ public class SDLogin extends DriverMaker {
 
     @Given("^I am a registered user$")
     public void i_am_a_registered_user() {
-        email = "someone1@some.com";
+        email = "someone3@some.com";
         password = "Qwerty@123";
     }
 

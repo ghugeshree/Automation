@@ -24,7 +24,7 @@ public class SDSignUp extends DriverMaker {
     @When("^I fill all Sign up fields$")
     public void iFillAllSignUpFields() {
         DriverMaker.explicitWait(signUpActivity1.getInputEmailAddress());
-        signUpActivity1.getInputEmailAddress().sendKeys("someone1@some.com");
+        signUpActivity1.getInputEmailAddress().sendKeys("someone3@some.com");
 
         signUpActivity1.getInputPassword().sendKeys("Qwerty@123");
 

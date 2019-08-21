@@ -19,6 +19,6 @@ public class DashboardActivity {
     //=============================================//=============================================
 
     public MobileElement getTextBanner() {
-        return driver.findElementByXPath("//*[contains(@text, \"completed the consent process.\")]");
+        return driver.findElementByAccessibilityId("bannerTextSubviewTextLabel");
     }
 }
