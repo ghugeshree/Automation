@@ -12,18 +12,17 @@ import java.time.Duration;
 public class CommonUtility extends DriverMaker{
 
     public void setUser() {
-        email = "someone5@some.com";
+        email = "someone6@some.com";
         password = "Qwerty@123";
     }
 
     public static void explicitWait(MobileElement element) {
-        byte i = 1;
-        WebDriverWait wait = new WebDriverWait(driver, 2);
 
         while(true) {
             if(element.isDisplayed()) {
                 break;
             } else {
+                WebDriverWait wait = new WebDriverWait(driver, 2);
                 wait.until(ExpectedConditions.visibilityOf(element));
             }
         }

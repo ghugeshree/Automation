@@ -318,9 +318,7 @@ public class SDPrimaryConsent extends CommonUtility{
 
         //check if user lands on his dashboard
         explicitWait(dashboardActivityObject.getTextBanner());
-        sleep();
-        if(dashboardActivityObject.getTextBanner().isDisplayed())
-            System.out.println("On dashboard");
+        System.out.println("On dashboard");
     }
 
 
