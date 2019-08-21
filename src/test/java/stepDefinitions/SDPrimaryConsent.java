@@ -224,7 +224,7 @@ public class SDPrimaryConsent extends CommonUtility{
         System.out.println("Page 27 completed.");
 
         //page 28 - scroll to bottom, press next - to change i < 24 (for Galaxy note 3)
-        for(byte i = 0; i < 20; i++)
+        for(byte i = 0; i < 15; i++)
             scroll();
         primaryConsentObject.getNext().click();
         System.out.println("Page 28 completed.");
