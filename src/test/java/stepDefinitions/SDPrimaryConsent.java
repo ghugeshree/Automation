@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class SDPrimaryConsent extends DriverMaker{
+public class SDPrimaryConsent extends CommonUtility{
     String email = null;
     String password = null;
     MobileElement nextElement = primaryConsentObject.getNext();
@@ -22,7 +22,7 @@ public class SDPrimaryConsent extends DriverMaker{
         pageTitle = "Welcome";
         if(isOnCorrectActivity(pageTitle)) {
             primaryConsentObject.watchVideo();
-            DriverMaker.explicitWait(primaryConsentObject.getNext());
+            explicitWait(primaryConsentObject.getNext());
             primaryConsentObject.getNext().click();
             System.out.println("Page 1 completed.");
         }
@@ -37,7 +37,6 @@ public class SDPrimaryConsent extends DriverMaker{
         //page 3 - press next
         pageTitle = "Just so you know...";
         if(isOnCorrectActivity(pageTitle)) {
-            System.out.println("On page 3");
             primaryConsentObject.getNext().click();
             System.out.println("Page 3 completed.");
         }
@@ -53,7 +52,7 @@ public class SDPrimaryConsent extends DriverMaker{
         pageTitle = "Where You Live";
         if(isOnCorrectActivity(pageTitle)) {
             primaryConsentObject.getButtonState().click();
-            DriverMaker.selectFromDropDown();
+            selectFromDropDown();
             primaryConsentObject.getNext().click();
             System.out.println("Page 5 completed.");
         }
@@ -71,7 +70,7 @@ public class SDPrimaryConsent extends DriverMaker{
         pageTitle = "Where You Get Healthcare";
         if(isOnCorrectActivity(pageTitle)) {
             primaryConsentObject.getButtonState().click();
-            DriverMaker.selectFromDropDown();
+            selectFromDropDown();
             primaryConsentObject.getNext().click();
             System.out.println("Page 7 completed.");
         }
@@ -125,11 +124,6 @@ public class SDPrimaryConsent extends DriverMaker{
         //page 14 - Samples - watch video and next
         pageTitle = "Samples";
         if(isOnCorrectActivity(pageTitle)) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             primaryConsentObject.watchVideo();
             primaryConsentObject.getNext().click();
             System.out.println("Page 14 completed.");
@@ -178,7 +172,6 @@ public class SDPrimaryConsent extends DriverMaker{
         //page 20 - Potential benefits, press next
         pageTitle = "Potential Benefits";
         if(isOnCorrectActivity(pageTitle)) {
-            System.out.println("=====Check=====");
             primaryConsentObject.getNext().click();
             System.out.println("Page 20 completed.");
         }
@@ -278,10 +271,10 @@ public class SDPrimaryConsent extends DriverMaker{
         System.out.println("Page 35 completed.");
 
         //page 36 - Name, date, scroll
-        driver.findElementByAccessibilityId("type your full name").sendKeys("John Doe");
-        scrollToPress();
+        primaryConsentObject.getInputFieldFullName().sendKeys("John Doe");
 
-        driver.findElementByAccessibilityId("[now | dateFormat: 'MM/dd/yyyy']").click();
+        scrollToPress();
+        primaryConsentObject.getInputFieldDate().click();
 
         sleep();
         primaryConsentObject.getNext().click();
@@ -293,26 +286,22 @@ public class SDPrimaryConsent extends DriverMaker{
         System.out.println("Page 37 completed.");
 
         //page 38 - Scroll
-        driver.findElementByAccessibilityId("first name").sendKeys("John");
-        driver.findElementByAccessibilityId("middle initial").sendKeys("T");
-
-        driver.findElementByAccessibilityId("last name").sendKeys("Doe");
-        driver.findElementByAccessibilityId("address 1").sendKeys("Wadi");
-        driver.findElementByAccessibilityId("address 2").sendKeys("Wadi");
-
-        driver.findElementByAccessibilityId("city").sendKeys("Pune");
-
+        primaryConsentObject.getInputFieldFirstName().sendKeys("John");
+        primaryConsentObject.getInputFieldMiddleName().sendKeys("T");
+        primaryConsentObject.getInputFieldLastName().sendKeys("Doe");
+        primaryConsentObject.getInputFieldAddress1().sendKeys("Wadi");
+        primaryConsentObject.getInputFieldAddress2().sendKeys("Wadi");
+        primaryConsentObject.getInputFieldCity().sendKeys("Pune");
 
         //this is a dropdown
-        driver.findElementByAccessibilityId("state").click();
-        DriverMaker.selectFromDropDown();
-        driver.findElementByAccessibilityId("zip code").sendKeys("12345");
+        primaryConsentObject.getInputFieldState().click();
+        selectFromDropDown();
+        primaryConsentObject.getInputFieldZipCode().sendKeys("12345");
 
         scrollToPress();
-        driver.findElementByAccessibilityId("phone number").sendKeys("9999999999");
-
-
+        primaryConsentObject.getInputFieldPhoneNo().sendKeys("9999999999");
         driver.findElementByAccessibilityId("MM/DD/YYYY").click();
+
         //go back 20 years
         scrollDate();
         primaryConsentObject.getNext().click();
@@ -334,6 +323,7 @@ public class SDPrimaryConsent extends DriverMaker{
 
         //check if user lands on his dashboard
         explicitWait(dashboardActivityObject.getTextBanner());
+        sleep();
         if(dashboardActivityObject.getTextBanner().isDisplayed())
             System.out.println("On dashboard");
     }

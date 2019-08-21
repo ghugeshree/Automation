@@ -11,7 +11,7 @@ import org.junit.Assert;
 /**
  * Created by shreyas.ghuge on 8/1/2019.
  */
-public class SDCommon extends DriverMaker {
+public class SDCommon extends CommonUtility {
 
     @Before public void before(Scenario scenario) {
         System.out.println("--------------------------------------------------------");
@@ -21,6 +21,8 @@ public class SDCommon extends DriverMaker {
 
     @After public void after(Scenario scenario) {
         System.out.println("================ Ended scenario : " + scenario.getName() + "================");
+
+        driver.resetApp();
     }
 
     @Then("^I am logged in to my account$")

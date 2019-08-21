@@ -6,13 +6,13 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class SDSignUp extends DriverMaker {
+public class SDSignUp extends CommonUtility {
     @Given("^I am on Sign Up activity$")
     public void iAmOnSignUpActivity() {
 
         logInActivityObject.getLinkToRegister().click();
 
-        DriverMaker.explicitWait(signUpActivity1.getLabelNewAccount());
+        explicitWait(signUpActivity1.getLabelNewAccount());
 
         String expected = signUpActivity1.getNewAccount();
         String actual = signUpActivity1.getLabelNewAccount().getText();
@@ -23,10 +23,11 @@ public class SDSignUp extends DriverMaker {
 
     @When("^I fill all Sign up fields$")
     public void iFillAllSignUpFields() {
-        DriverMaker.explicitWait(signUpActivity1.getInputEmailAddress());
-        signUpActivity1.getInputEmailAddress().sendKeys("someone3@some.com");
+        setUser();
+        explicitWait(signUpActivity1.getInputEmailAddress());
+        signUpActivity1.getInputEmailAddress().sendKeys(email);
 
-        signUpActivity1.getInputPassword().sendKeys("Qwerty@123");
+        signUpActivity1.getInputPassword().sendKeys(password);
 
         signUpActivity1.getInputEmailAddress().click();
 
@@ -35,7 +36,7 @@ public class SDSignUp extends DriverMaker {
 
         signUpActivity1.getButtonContinue().click();
 
-        DriverMaker.explicitWait(signUpActivity2.getLabelInfo());
+        explicitWait(signUpActivity2.getLabelInfo());
 
         String expected = signUpActivity2.getCheckText();
         String actual = signUpActivity2.getLabelInfo().getText();
@@ -50,13 +51,13 @@ public class SDSignUp extends DriverMaker {
 
         signUpActivity2.getAnswer3().sendKeys("ajgvsdhjfsasvdh");
 
-        DriverMaker.explicitWait(signUpActivity2.getButtonSignUp());
+        explicitWait(signUpActivity2.getButtonSignUp());
         signUpActivity2.getButtonSignUp().click();
     }
 
     @Then("^I am registered$")
     public void iAmRegistered() {
-        DriverMaker.explicitWait(primaryConsentObject.getLabelWelcome());
+        explicitWait(primaryConsentObject.getLabelWelcome());
 
         String expected = primaryConsentObject.getLabelWelcomeExpected();
         String actual = primaryConsentObject.getLabelWelcome().getText();

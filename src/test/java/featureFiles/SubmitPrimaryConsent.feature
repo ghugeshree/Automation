@@ -1,6 +1,7 @@
 Feature: User completes the self-declaration(Primary consent) form before using
   All of Us application.
 
+  @PrimaryConsent
   Scenario: Submit primary consent
     Given I am a registered user
     And   I enter my credentials

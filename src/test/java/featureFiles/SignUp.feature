@@ -3,6 +3,7 @@ Feature: Sign Up
     1. Registration information page
     2. Security information page
 
+  @SignUp
   Scenario: Successful Sign up
     Given I am on Sign Up activity
     When I fill all Sign up fields

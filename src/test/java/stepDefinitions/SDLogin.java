@@ -10,21 +10,19 @@ import org.junit.Assert;
 /**
  * Created by shreyas.ghuge on 8/1/2019.
  */
-public class SDLogin extends DriverMaker {
+public class SDLogin extends CommonUtility {
 
-    private String email = null;
-    private String password = null;
+
 
     @Given("^I am a registered user$")
     public void i_am_a_registered_user() {
-        email = "someone3@some.com";
-        password = "Qwerty@123";
+        setUser();
     }
 
     @When("^I enter my credentials$")
     public void iEnterMyCredentials() {
 
-        DriverMaker.explicitWait(logInActivityObject.getLabelSignIn());
+        explicitWait(logInActivityObject.getLabelSignIn());
 
         logInActivityObject.getEmailField().sendKeys(email);
 
