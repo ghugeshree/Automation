@@ -4,6 +4,8 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.junit.Assert;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.page_initializer.PageInitializer;
 
 import static utility.CommonUtility.explicitWait;
@@ -18,26 +20,29 @@ public class SignUpPage1 extends PageInitializer {
         return "Create a new account";
     }
 
+    @FindBy(xpath = "//div[@data-target=\"signup.title\"]")
     @AndroidFindBy(xpath = "//*[contains(@text, 'Create a new')]")
     @iOSXCUITFindBy(accessibility = "signup.title")
-    public MobileElement labelNewAccount;
+    public RemoteWebElement labelNewAccount;
 
+    @FindBy(xpath = "//input[@id='signUpEmail']")
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signup_fields_email_hintText")
     @iOSXCUITFindBy(accessibility = "signup.fields.email.hintText")
-    public MobileElement inputFieldEmailAddress;
+    public RemoteWebElement inputFieldEmailAddress;
 
+    @FindBy(xpath = "//input[@id='signUpPassword']")
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signup_fields_password_text")
     @iOSXCUITFindBy(accessibility = "signup.fields.password.hintText")
-    public MobileElement inputFieldPassword;
+    public RemoteWebElement inputFieldPassword;
 
+    @FindBy(xpath = "//button[@type='submit']")
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signup_action_button_next")
     @iOSXCUITFindBy(accessibility = "signup.action.button.next")
-    public MobileElement buttonContinue;
-
+    public RemoteWebElement buttonContinue;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/textinput_error")
     @iOSXCUITFindBy(id = "com.acadia.pmistaging:id/textinput_error")
-    public MobileElement errorMsg;
+    public RemoteWebElement errorMsg;
 
     //======================================================================================
     public String getEmailErrorMsg() {

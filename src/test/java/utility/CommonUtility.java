@@ -1,6 +1,7 @@
 package utility;
 
 import driver_maker.IOSDriverMaker;
+import driver_maker.WebDriverMaker;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -17,7 +18,7 @@ public class CommonUtility {
 
     public static String email = null;
     public static String password = null;
-    public static IOSDriverMaker DriverMakerObject = new IOSDriverMaker();
+    public static WebDriverMaker DriverMakerObject = new WebDriverMaker();
     public static DriverUtility DriverUtilityObject = new IOSDriverUtility();
     public static RemoteWebDriver driver = DriverMakerObject.getDriver();
 
@@ -71,7 +72,7 @@ public class CommonUtility {
                 .perform();
     }
 
-    public static boolean isClickable(MobileElement element) {
+    public static boolean isClickable(RemoteWebElement element) {
         return element.getAttribute("value").equals("1");
     }
 

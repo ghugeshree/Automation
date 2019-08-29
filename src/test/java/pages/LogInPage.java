@@ -5,6 +5,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.page_initializer.PageInitializer;
 
 import static utility.CommonUtility.explicitWait;
@@ -18,32 +20,34 @@ public class LogInPage extends PageInitializer {
         super();
     }
 
+    @FindBy(xpath = "//div[@data-target=\"signin.title\"]")
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signin_title")
     @iOSXCUITFindBy(accessibility = "signin.title")
-    public MobileElement labelSignIn;
+    public RemoteWebElement labelSignIn;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signin_action_signin")
     @iOSXCUITFindBy(accessibility = "signin.action.signin")
-    public MobileElement buttonSignIn;
+    public RemoteWebElement buttonSignIn;
 
+    @FindBy(xpath = "//a[@data-target=\"signin.action.signup\"]")
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signin_action_signup")
     @iOSXCUITFindBy(accessibility = "signin.action.signup")
-    public MobileElement linkToRegister;
+    public RemoteWebElement linkToRegister;
     public void clickLinkToRegister() {
         linkToRegister.click();
     }
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signin_fields_login_hintText")
     @iOSXCUITFindBy(accessibility = "signin.fields.login.hintText")
-    public MobileElement inputFieldEmail;
+    public RemoteWebElement inputFieldEmail;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signin_fields_password")
     @iOSXCUITFindBy(accessibility = "signin.fields.password.hintText")
-    public MobileElement inputFieldPassword;
+    public RemoteWebElement inputFieldPassword;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/textinput_error")
     @iOSXCUITFindBy(accessibility = "signin.fields.login.errors.minlength")
-    public MobileElement errorMsg;
+    private RemoteWebElement errorMsg;
 
     //==========================================================================================
 

@@ -1,21 +1,23 @@
 package driver_maker;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class WebDriverMaker extends DriverMaker {
-    WebDriver driver = null;
 
     @Override
     void setDriver() {
-        String projectPath =
         System.setProperty("webdriver.chrome.driver", "/Users/shreyas.ghuge/Documents/Assignments/chromedriver");
         driver = new ChromeDriver();
+        driver.get("https://sub-automation.qak8s.vibrenthealth.com/#/login");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    WebDriver getDriver() {
+    public RemoteWebDriver getDriver() {
         if(driver == null) {
             setDriver();
         }

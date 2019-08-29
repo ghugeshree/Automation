@@ -5,7 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.LogInPage;
-import utility.CommonUtility;
+import static utility.CommonUtility.*;
 
 /**
  * Created by shreyas.ghuge on 8/1/2019.
@@ -15,13 +15,13 @@ public class SDLogin {
 
     @Given("^I am a registered user$")
     public void i_am_a_registered_user() {
-        CommonUtility.setUser();
+        setUser();
     }
 
     @When("^I enter my credentials$")
     public void iEnterMyCredentials() {
         LogInPage obj = new LogInPage();
-        obj.loginWith(CommonUtility.email, CommonUtility.password);
+        obj.loginWith(email, password);
     }
 
     @And("^I am on Log in page$")

@@ -1,13 +1,10 @@
 package pages;
 
-import driver_maker.DriverMaker;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.junit.Assert;
+import org.openqa.selenium.remote.RemoteWebElement;
 import pages.page_initializer.PageInitializer;
-import utility.AndroidDriverUtility;
 import utility.DriverUtility;
 
 import static utility.CommonUtility.*;
@@ -25,93 +22,93 @@ public class ConsentPage extends PageInitializer {
 
     @AndroidFindBy(accessibility = "Welcome")
     @iOSXCUITFindBy(xpath = "//*[@name=\"Welcome\"]")
-    public MobileElement labelWelcome;
+    public RemoteWebElement labelWelcome;
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.ImageView']/following::android.widget.ImageView")
     @iOSXCUITFindBy(accessibility = "play button")
-    public MobileElement buttonPlay;
+    public RemoteWebElement buttonPlay;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/button_next")
     @iOSXCUITFindBy(accessibility = "Next")
-    public MobileElement buttonNext;
+    public RemoteWebElement buttonNext;
 
     @AndroidFindBy(id = "com.google.android.youtube:id/bottom_bar_container")
-    public MobileElement videoWindow;
+    public RemoteWebElement videoWindow;
 
     @AndroidFindBy(id = "com.google.android.youtube:id/time_bar")
-    public MobileElement seekBar;
+    public RemoteWebElement seekBar;
 
     @AndroidFindBy(accessibility = "Yes Option not selected")
     @iOSXCUITFindBy(accessibility = "YesRadio button")
-    public MobileElement buttonRadioYes;
+    public RemoteWebElement buttonRadioYes;
 
     @AndroidFindBy(accessibility = "No Option not selected")
     @iOSXCUITFindBy(accessibility = "NoRadio button")
-    public MobileElement buttonRadioNo;
+    public RemoteWebElement buttonRadioNo;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'I have read this consent')]")
     @iOSXCUITFindBy(accessibility = "Boolean Selector")
-    public MobileElement buttonRadioStatement;
+    public RemoteWebElement buttonRadioStatement;
 
     @AndroidFindBy(accessibility = "Submit")
     @iOSXCUITFindBy(accessibility = "Submit")
-    public MobileElement buttonSubmit;
+    public RemoteWebElement buttonSubmit;
 
     @AndroidFindBy(className = "android.widget.EditText")
     @iOSXCUITFindBy(accessibility = "type your full name")
-    public MobileElement inputFieldFullName;
+    public RemoteWebElement inputFieldFullName;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/date_picker_done")
-    public MobileElement popUpAnswerDone;
+    public RemoteWebElement popUpAnswerDone;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'MM')]")
     @iOSXCUITFindBy(accessibility = "[now | dateFormat: 'MM/dd/yyyy']")
-    public MobileElement inputFieldDate;
+    public RemoteWebElement inputFieldDate;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'first')]")
     @iOSXCUITFindBy(accessibility = "first name")
-    public MobileElement inputFieldFirstName;
+    public RemoteWebElement inputFieldFirstName;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'middle')]")
     @iOSXCUITFindBy(accessibility = "middle initial")
-    public MobileElement inputFieldMiddleName;
+    public RemoteWebElement inputFieldMiddleName;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'last')]")
     @iOSXCUITFindBy(accessibility = "last name")
-    public MobileElement inputFieldLastName;
+    public RemoteWebElement inputFieldLastName;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'address')]")
     @iOSXCUITFindBy(accessibility = "address 1")
-    public MobileElement inputFieldAddress1;
+    public RemoteWebElement inputFieldAddress1;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'address 2')]")
     @iOSXCUITFindBy(accessibility = "address 2")
-    public MobileElement inputFieldAddress2;
+    public RemoteWebElement inputFieldAddress2;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'city')]")
     @iOSXCUITFindBy(accessibility = "city")
-    public MobileElement inputFieldCity;
+    public RemoteWebElement inputFieldCity;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/spinnerText")
     @iOSXCUITFindBy(accessibility = "state")
-    public MobileElement inputFieldState;
+    public RemoteWebElement inputFieldState;
 
     @AndroidFindBy(accessibility = "Alabama")
-    public MobileElement inputFieldStateAnswer;
+    public RemoteWebElement inputFieldStateAnswer;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'zip')]")
     @iOSXCUITFindBy(accessibility = "zip code")
-    public MobileElement inputFieldZipCode;
+    public RemoteWebElement inputFieldZipCode;
 
     @AndroidFindBy(xpath = "//*[contains(@text, 'phone')]")
     @iOSXCUITFindBy(accessibility = "phone number")
-    public MobileElement inputFieldPhoneNo;
+    public RemoteWebElement inputFieldPhoneNo;
 
     //No - .cancel
     //Yes - .ok
     @AndroidFindBy(id = "com.acadia.pmistaging:id/signup_fields_password_text")
     @iOSXCUITFindBy(accessibility = "notification.page.communication.action.cancel")
-    public MobileElement buttonYes;
+    public RemoteWebElement buttonYes;
 
     //======================================================================================
     public String getLabelWelcomeExpected() {

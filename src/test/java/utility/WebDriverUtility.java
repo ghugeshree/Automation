@@ -1,5 +1,7 @@
 package utility;
 
+import org.openqa.selenium.JavascriptExecutor;
+
 public class WebDriverUtility extends DriverUtility {
 
     @Override
@@ -36,4 +38,5 @@ public class WebDriverUtility extends DriverUtility {
     public void fillPage40() {
 
     }
+
 }

@@ -3,6 +3,7 @@ package pages;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.remote.RemoteWebElement;
 import pages.page_initializer.PageInitializer;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class SettingsPage extends PageInitializer {
 
     @AndroidFindBy(className = "android.widget.Switch")
     @iOSXCUITFindBy(className = "XCUIElementTypeSwitch")
-    public List<MobileElement> buttonToggles;
+    public List<RemoteWebElement> buttonToggles;
 
     public void checkIfOnSettingsPage() {
         explicitWait(buttonToggles.get(0));

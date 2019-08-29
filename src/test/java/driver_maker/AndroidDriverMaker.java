@@ -3,13 +3,13 @@ package driver_maker;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class AndroidDriverMaker extends DriverMaker{
-    AppiumDriver<MobileElement> driver = null;
 
     @Override
     void setDriver() {
@@ -42,10 +42,10 @@ public class AndroidDriverMaker extends DriverMaker{
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    public AppiumDriver<MobileElement> getDriver() {
+    public RemoteWebDriver getDriver() {
         if(driver == null) {
             setDriver();
         }
-        return this.driver;
+        return driver;
     }
 }

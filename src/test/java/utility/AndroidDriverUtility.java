@@ -134,4 +134,25 @@ public class AndroidDriverUtility extends DriverUtility {
     public void fillPage40() {
     }
 
+    public void scrollToPress() {
+
+        sleep();
+
+        int height = driver.manage().window().getSize().getHeight();
+        int width = driver.manage().window().getSize().getWidth();
+
+        new TouchAction((PerformsTouchActions) driver)
+                .press(PointOption.point((int)(width * 0.8), (int)(height * 0.5)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
+                .release()
+                .perform();
+
+        new TouchAction((PerformsTouchActions) driver)
+                .press(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
+                .release()
+                .perform();
+    }
+
+
 }

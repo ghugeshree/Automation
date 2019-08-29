@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,7 +12,6 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class IOSDriverMaker extends DriverMaker {
-    AppiumDriver<MobileElement> driver = null;
 
     @Override
     void setDriver() {
@@ -39,7 +39,7 @@ public class IOSDriverMaker extends DriverMaker {
         }
     }
 
-    public AppiumDriver<MobileElement> getDriver() {
+    public RemoteWebDriver getDriver() {
         if(driver == null) {
             System.out.println("Setting new driver...");
             setDriver();

@@ -4,6 +4,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.junit.Assert;
+import org.openqa.selenium.remote.RemoteWebElement;
 import pages.page_initializer.PageInitializer;
 
 import static utility.CommonUtility.explicitWait;
@@ -20,23 +21,23 @@ public class SignUpPage2 extends PageInitializer {
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/securityQuestions_header_secondary")
     @iOSXCUITFindBy(accessibility = "securityQuestions.header.secondary")
-    public MobileElement labelInfo;
+    public RemoteWebElement labelInfo;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/edt_question1")
     @iOSXCUITFindBy(accessibility = "AnswerOneField")
-    public MobileElement inputFieldAnswer1;
+    public RemoteWebElement inputFieldAnswer1;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/edt_question2")
     @iOSXCUITFindBy(accessibility = "AnswerTwoField")
-    public MobileElement inputFieldAnswer2;
+    public RemoteWebElement inputFieldAnswer2;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/edt_question3")
     @iOSXCUITFindBy(accessibility = "AnswerThreeField")
-    public MobileElement inputFieldAnswer3;
+    public RemoteWebElement inputFieldAnswer3;
 
     @AndroidFindBy(id = "com.acadia.pmistaging:id/securityQuestions_button_next")
     @iOSXCUITFindBy(accessibility = "securityQuestions.button.next")
-    public MobileElement buttonSignUp;
+    public RemoteWebElement buttonSignUp;
 
     //======================================================================================
 
