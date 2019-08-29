@@ -120,6 +120,28 @@ public class IOSDriverUtility extends DriverUtility {
 
         System.out.println("Page 40 completed.");
     }
+
+    @Override
+    public void scrollToPress(RemoteWebElement... elements) {
+
+        sleep();
+
+        int height = driver.manage().window().getSize().getHeight();
+        int width = driver.manage().window().getSize().getWidth();
+
+        new TouchAction((PerformsTouchActions) driver)
+                .press(PointOption.point((int)(width * 0.8), (int)(height * 0.5)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
+                .release()
+                .perform();
+
+        new TouchAction((PerformsTouchActions) driver)
+                .press(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
+                .release()
+                .perform();
+    }
+
 }
 
 

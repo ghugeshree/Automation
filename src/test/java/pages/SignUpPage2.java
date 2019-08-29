@@ -7,8 +7,8 @@ import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebElement;
 import pages.page_initializer.PageInitializer;
 
+import static utility.CommonUtility.DriverUtilityObject;
 import static utility.CommonUtility.explicitWait;
-import static utility.CommonUtility.scrollToPress;
 
 /**
  * Created by shreyas.ghuge on 7/26/2019.
@@ -56,13 +56,13 @@ public class SignUpPage2 extends PageInitializer {
 
     public void setSecurityAnswers() {
         inputFieldAnswer1.sendKeys("ajgvsdhjasvdha");
-        scrollToPress();
+        DriverUtilityObject.scrollToPress(inputFieldAnswer2);
 
         inputFieldAnswer2.sendKeys("ajgvsdhjasvdhb");
-        scrollToPress();
+        DriverUtilityObject.scrollToPress(inputFieldAnswer3);
 
         inputFieldAnswer3.sendKeys("ajgvsdhjasvdhc");
-        scrollToPress();
+        DriverUtilityObject.scrollToPress(buttonSignUp);
 
         explicitWait(buttonSignUp);
         buttonSignUp.click();

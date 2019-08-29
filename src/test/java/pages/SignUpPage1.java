@@ -8,8 +8,8 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.page_initializer.PageInitializer;
 
+import static utility.CommonUtility.DriverUtilityObject;
 import static utility.CommonUtility.explicitWait;
-import static utility.CommonUtility.scrollToPress;
 
 /**
  * Created by shreyas.ghuge on 7/26/2019.
@@ -68,7 +68,7 @@ public class SignUpPage1 extends PageInitializer {
         inputFieldPassword.sendKeys(password);
 
         //scroll down to press the sign in button
-        scrollToPress();
+        DriverUtilityObject.scrollToPress(buttonContinue);
         buttonContinue.click();
     }
 

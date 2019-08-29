@@ -131,10 +131,12 @@ public class AndroidDriverUtility extends DriverUtility {
         scrollToPress();
     }
 
+    @Override
     public void fillPage40() {
     }
 
-    public void scrollToPress() {
+    @Override
+    public void scrollToPress(RemoteWebElement... elements) {
 
         sleep();
 

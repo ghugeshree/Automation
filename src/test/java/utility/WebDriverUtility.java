@@ -1,6 +1,8 @@
 package utility;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.RemoteWebElement;
+import static utility.CommonUtility.*;
 
 public class WebDriverUtility extends DriverUtility {
 
@@ -39,4 +41,9 @@ public class WebDriverUtility extends DriverUtility {
 
     }
 
+    @Override
+    public void scrollToPress(RemoteWebElement... elements) {
+        RemoteWebElement element = elements[0];
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 }

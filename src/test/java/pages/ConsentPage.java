@@ -106,7 +106,7 @@ public class ConsentPage extends PageInitializer {
 
     //No - .cancel
     //Yes - .ok
-    @AndroidFindBy(id = "com.acadia.pmistaging:id/signup_fields_password_text")
+    //@AndroidFindBy(id = "com.acadia.pmistaging:id/signup_fields_password_text")
     @iOSXCUITFindBy(accessibility = "notification.page.communication.action.cancel")
     public RemoteWebElement buttonYes;
 
@@ -158,7 +158,7 @@ public class ConsentPage extends PageInitializer {
     public void completePage4() {
         //page 4 - press next
         sleep();
-        scrollToPress();
+        DriverUtilityObject.scrollToPress();
         buttonNext.click();
         System.out.println("Page 4 completed.");
     }

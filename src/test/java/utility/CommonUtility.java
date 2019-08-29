@@ -19,7 +19,7 @@ public class CommonUtility {
     public static String email = null;
     public static String password = null;
     public static WebDriverMaker DriverMakerObject = new WebDriverMaker();
-    public static DriverUtility DriverUtilityObject = new IOSDriverUtility();
+    public static DriverUtility DriverUtilityObject = new WebDriverUtility();
     public static RemoteWebDriver driver = DriverMakerObject.getDriver();
 
     public static void setUser() {
@@ -48,26 +48,6 @@ public class CommonUtility {
                 .press(PointOption.point((int)(width * 0.8), (int)(height * 0.9)))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
                 .moveTo(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
-                .release()
-                .perform();
-    }
-
-    public static void scrollToPress() {
-
-        sleep();
-
-        int height = driver.manage().window().getSize().getHeight();
-        int width = driver.manage().window().getSize().getWidth();
-
-        new TouchAction((PerformsTouchActions) driver)
-                .press(PointOption.point((int)(width * 0.8), (int)(height * 0.5)))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
-                .moveTo(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
-                .release()
-                .perform();
-
-        new TouchAction((PerformsTouchActions) driver)
-                .press(PointOption.point((int)(width * 0.8), (int)(height * 0.2)))
                 .release()
                 .perform();
     }
