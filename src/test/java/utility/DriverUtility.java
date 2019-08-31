@@ -1,7 +1,5 @@
 package utility;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
 /**

@@ -125,31 +125,31 @@ public class ConsentPage extends PageInitializer {
         Assert.assertTrue("Primary consent not loaded.", expected.equals(actual));
     }
 
-    public void completePage1(DriverUtility driverMakerUtility) {
+    public void completePage1(DriverUtility driverUtility) {
 
         //page 1 - watch video
         pageTitle = "Welcome";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             explicitWait(buttonNext);
             buttonNext.click();
             System.out.println("Page 1 completed.");
         }
     }
 
-    public void completePage2(DriverUtility driverMakerUtility) {
+    public void completePage2(DriverUtility driverUtility) {
         //page 2 - press next
         pageTitle = "Are you ready?";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 2 completed.");
         }
     }
 
-    public void completePage3(DriverUtility driverMakerUtility) {
+    public void completePage3(DriverUtility driverUtility) {
         //page 3 - press next
         pageTitle = "Just so you know...";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 3 completed.");
         }
@@ -163,37 +163,37 @@ public class ConsentPage extends PageInitializer {
         System.out.println("Page 4 completed.");
     }
 
-    public void completePage5(DriverUtility driverMakerUtility) {
+    public void completePage5(DriverUtility driverUtility) {
         //page 5 - where you live? select state and press next
         pageTitle = "Where You Live";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.selectState();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.selectState();
             buttonNext.click();
             System.out.println("Page 5 completed.");
         }
     }
 
-    public void completePage6(DriverUtility driverMakerUtility) {
+    public void completePage6(DriverUtility driverUtility) {
         //page 6 = Before you begin, Age confirmation, press yes
         pageTitle = "Before We Begin";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonRadioYes.click();
             buttonNext.click();
             System.out.println("Page 6 completed.");
         }
     }
 
-    public void completePage7(DriverUtility driverMakerUtility) {
+    public void completePage7(DriverUtility driverUtility) {
         //page 7 - where you get healthcare, select healthcare place and press next
         pageTitle = "Where You Get Healthcare";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.selectState();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.selectState();
             buttonNext.click();
             System.out.println("Page 7 completed.");
         }
     }
 
-    public void completePage8(DriverUtility driverMakerUtility) {
+    public void completePage8(DriverUtility driverUtility) {
         //page 8 - Check understanding, press next
         pageTitle = "Check Your Understanding";
         sleep();
@@ -201,175 +201,175 @@ public class ConsentPage extends PageInitializer {
         System.out.println("Page 8 completed.");
     }
 
-    public void completePage9(DriverUtility driverMakerUtility) {
+    public void completePage9(DriverUtility driverUtility) {
         //page 9 - What will I do, press next
         pageTitle = "What will I do?";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 9 completed.");
         }
     }
 
-    public void completePage10(DriverUtility driverMakerUtility) {
+    public void completePage10(DriverUtility driverUtility) {
         //page 10 - Keeping in touch - watch video and next
         pageTitle = "Keeping in Touch";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 10 completed.");
         }
     }
 
-    public void completePage11(DriverUtility driverMakerUtility) {
+    public void completePage11(DriverUtility driverUtility) {
         //page 11 - Health data - watch video and next
         pageTitle = "Health Data";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 11 completed.");
         }
     }
 
-    public void completePage12(DriverUtility driverMakerUtility) {
+    public void completePage12(DriverUtility driverUtility) {
         //page 12 - Health Record - watch video and next
         pageTitle = "Health Record";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 12 completed.");
         }
     }
 
-    public void completePage13(DriverUtility driverMakerUtility) {
+    public void completePage13(DriverUtility driverUtility) {
         //page 13 - Physical Measurement - watch video and next
         pageTitle = "Physical Measurements";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 13 completed.");
         }
     }
 
-    public void completePage14(DriverUtility driverMakerUtility) {
+    public void completePage14(DriverUtility driverUtility) {
         //page 14 - Samples - watch video and next
         pageTitle = "Samples";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 14 completed.");
         }
     }
 
-    public void completePage15(DriverUtility driverMakerUtility) {
+    public void completePage15(DriverUtility driverUtility) {
         //page 15 - DNA Analysis - watch video and next
         pageTitle = "DNA Analysis";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 15 completed.");
         }
     }
 
-    public void completePage16(DriverUtility driverMakerUtility) {
+    public void completePage16(DriverUtility driverUtility) {
         //page 16 - Fitness Tracker - watch video and next
         pageTitle = "Fitness Tracker";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 16 completed.");
         }
     }
 
-    public void completePage17(DriverUtility driverMakerUtility) {
+    public void completePage17(DriverUtility driverUtility) {
         //page 17 - Other Health data - watch video and next
         pageTitle = "Other Health Data";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 17 completed.");
         }
     }
 
-    public void completePage18(DriverUtility driverMakerUtility) {
+    public void completePage18(DriverUtility driverUtility) {
         //page 18 - What will we do? , press next
         pageTitle = "What will we do?";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 18 completed.");
         }
     }
 
-    public void completePage19(DriverUtility driverMakerUtility) {
+    public void completePage19(DriverUtility driverUtility) {
         //page 19 - Data Sharing - watch video and next
         pageTitle = "Data Sharing";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 19 completed.");
         }
     }
 
-    public void completePage20(DriverUtility driverMakerUtility) {
+    public void completePage20(DriverUtility driverUtility) {
         //page 20 - Potential benefits, press next
         pageTitle = "Potential Benefits";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 20 completed.");
         }
     }
 
-    public void completePage21(DriverUtility driverMakerUtility) {
+    public void completePage21(DriverUtility driverUtility) {
         //page 21 - Other benefits, press next
         pageTitle = "Other Benefits";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 21 completed.");
         }
     }
 
-    public void completePage22(DriverUtility driverMakerUtility) {
+    public void completePage22(DriverUtility driverUtility) {
         //page 22 - Risk to privacy - watch video and next
         pageTitle = "Risk To Privacy";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
-            driverMakerUtility.watchVideo();
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
+            driverUtility.watchVideo();
             buttonNext.click();
             System.out.println("Page 22 completed.");
         }
     }
 
-    public void completePage23(DriverUtility driverMakerUtility) {
+    public void completePage23(DriverUtility driverUtility) {
         //page 23 - Not medical care, press next
         pageTitle = "Not Medical Care";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
             buttonNext.click();
             System.out.println("Page 23 completed.");
         }
     }
 
-    public void completePage24(DriverUtility driverMakerUtility) {
+    public void completePage24(DriverUtility driverUtility) {
         //page 24 - You get to choose, press next
         pageTitle = "You Get To Choose";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
 
             buttonNext.click();
             System.out.println("Page 24 completed.");
         }
     }
 
-    public void completePage25(DriverUtility driverMakerUtility) {
+    public void completePage25(DriverUtility driverUtility) {
         //page 25 - If you withdraw, press next
         pageTitle = "If You Withdraw";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
 
             buttonNext.click();
             System.out.println("Page 25 completed.");
         }
     }
 
-    public void completePage26(DriverUtility driverMakerUtility) {
+    public void completePage26(DriverUtility driverUtility) {
         //page 26 - Think it over, press next
         pageTitle = "Think It Over";
-        if(driverMakerUtility.isOnCorrectActivity(pageTitle)) {
+        if(driverUtility.isOnCorrectActivity(pageTitle)) {
 
             buttonNext.click();
             System.out.println("Page 26 completed.");
@@ -427,7 +427,7 @@ public class ConsentPage extends PageInitializer {
         System.out.println("Page 33 completed.");
     }
 
-    public void completePage34(DriverUtility driverMakerUtility) {
+    public void completePage34(DriverUtility driverUtility) {
         //page 34 -
         sleep();
         buttonNext.click();
@@ -441,9 +441,9 @@ public class ConsentPage extends PageInitializer {
         System.out.println("Page 35 completed.");
     }
 
-    public void completePage36(DriverUtility driverMakerUtility) {
+    public void completePage36(DriverUtility driverUtility) {
         //page 36 - Name, date, scroll
-        driverMakerUtility.fillPage36();
+        driverUtility.fillPage36();
         sleep();
         buttonNext.click();
         System.out.println("Page 36 completed.");
@@ -457,9 +457,9 @@ public class ConsentPage extends PageInitializer {
         System.out.println("Page 37 completed.");
     }
 
-    public void completePage38(DriverUtility driverMakerUtility) {
+    public void completePage38(DriverUtility driverUtility) {
         //page 38 - Scroll
-        driverMakerUtility.fillPage38();
+        driverUtility.fillPage38();
     }
 
     public void completePage39() {
@@ -469,39 +469,39 @@ public class ConsentPage extends PageInitializer {
         System.out.println("Page 39 completed.");
     }
 
-    public void completePage40(DriverUtility driverMakerUtility) {
+    public void completePage40(DriverUtility driverUtility) {
         //page 40 - Get Updates
-        driverMakerUtility.fillPage40();
+        driverUtility.fillPage40();
     }
 
-    public void fillPrimaryConsent(DriverUtility driverMakerUtility) {
-        completePage1(driverMakerUtility);
-        completePage2(driverMakerUtility);
-        completePage3(driverMakerUtility);
+    public void fillPrimaryConsent(DriverUtility driverUtility) {
+        completePage1(driverUtility);
+        completePage2(driverUtility);
+        completePage3(driverUtility);
         completePage4();
-        completePage5(driverMakerUtility);
-        completePage6(driverMakerUtility);
-        completePage7(driverMakerUtility);
-        completePage8(driverMakerUtility);
-        completePage9(driverMakerUtility);
-        completePage10(driverMakerUtility);
-        completePage11(driverMakerUtility);
-        completePage12(driverMakerUtility);
-        completePage13(driverMakerUtility);
-        completePage14(driverMakerUtility);
-        completePage15(driverMakerUtility);
-        completePage16(driverMakerUtility);
-        completePage16(driverMakerUtility);
-        completePage17(driverMakerUtility);
-        completePage18(driverMakerUtility);
-        completePage19(driverMakerUtility);
-        completePage20(driverMakerUtility);
-        completePage21(driverMakerUtility);
-        completePage22(driverMakerUtility);
-        completePage23(driverMakerUtility);
-        completePage24(driverMakerUtility);
-        completePage25(driverMakerUtility);
-        completePage26(driverMakerUtility);
+        completePage5(driverUtility);
+        completePage6(driverUtility);
+        completePage7(driverUtility);
+        completePage8(driverUtility);
+        completePage9(driverUtility);
+        completePage10(driverUtility);
+        completePage11(driverUtility);
+        completePage12(driverUtility);
+        completePage13(driverUtility);
+        completePage14(driverUtility);
+        completePage15(driverUtility);
+        completePage16(driverUtility);
+        completePage16(driverUtility);
+        completePage17(driverUtility);
+        completePage18(driverUtility);
+        completePage19(driverUtility);
+        completePage20(driverUtility);
+        completePage21(driverUtility);
+        completePage22(driverUtility);
+        completePage23(driverUtility);
+        completePage24(driverUtility);
+        completePage25(driverUtility);
+        completePage26(driverUtility);
         completePage27();
         completePage28();
         completePage29();
@@ -509,13 +509,13 @@ public class ConsentPage extends PageInitializer {
         completePage31();
         completePage32();
         completePage33();
-        completePage34(driverMakerUtility);
+        completePage34(driverUtility);
         completePage35();
-        completePage36(driverMakerUtility);
+        completePage36(driverUtility);
         completePage37();
-        completePage38(driverMakerUtility);
+        completePage38(driverUtility);
         completePage39();
-        completePage40(driverMakerUtility);
+        completePage40(driverUtility);
     }
 
 
