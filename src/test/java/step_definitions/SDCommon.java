@@ -8,7 +8,10 @@ import cucumber.api.java.en.Then;
 import org.openqa.selenium.NoSuchElementException;
 import pages.ConsentPage;
 import pages.DashboardPage;
-import static utility.CommonUtility.*;
+
+import java.io.IOException;
+
+import static utility.CommonUtility.captureScreenShots;
 
 /**
  * Created by shreyas.ghuge on 8/1/2019.
@@ -21,8 +24,10 @@ public class SDCommon {
         System.out.println("--------------------------------------------------------");
     }
 
-    @After public void after(Scenario scenario) {
+    @After
+    public void after(Scenario scenario) throws IOException {
         System.out.println("================ Ended scenario : " + scenario.getName() + "================");
+        captureScreenShots(scenario);
     }
 
     @Then("^I am logged in to my account$")

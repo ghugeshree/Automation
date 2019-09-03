@@ -1,18 +1,25 @@
 package utility;
 
-import driver_maker.IOSDriverMaker;
+import cucumber.api.Scenario;
 import driver_maker.WebDriverMaker;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
 public class CommonUtility {
 
@@ -62,5 +69,22 @@ public class CommonUtility {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void captureScreenShots(Scenario scenario) throws IOException {
+        String folder_name = "/Users/shreyas.ghuge/Documents/Assignments/Automation/target";
+        File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        //Date format fot screenshot file name __hh_mm_ssaa
+        DateFormat df = new SimpleDateFormat("dd-mm-yyyy@hh:mm");
+
+        //create dir with given folder name
+        new File(folder_name).mkdir();
+
+        //Setting file name
+        String file_name = scenario.getId().split(";")[0] + "_" + df.format(new Date()) + ".png";
+
+        //copy screenshot file into screenshot folder.
+        FileUtils.copyFile(f, new File(folder_name + "/" + file_name));
     }
 }
